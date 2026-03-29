@@ -11,19 +11,23 @@ document.getElementById("leadForm").addEventListener("submit", async function (e
     budget: document.getElementById("budget").value,
   };
 
-  const response = await fetch("YOUR_SUPABASE_URL/rest/v1/cobra_leads", {
+  const response = await fetch("https://vauuoukoxvrliaznvale.supabase.co", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "apikey": "sb_publishable_nADEbSJ7tkdGAZ7CWW_0tA_t2bi3OB-",
-      "Authorization": "sb_publishable_nADEbSJ7tkdGAZ7CWW_0tA_t2bi3OB-"
+      "Authorization": "Bearer sb_publishable_nADEbSJ7tkdGAZ7CWW_0tA_t2bi3OB-",
+      "Prefer": "return=representation"
     },
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
     alert("Thank you! A licensed agent will contact you shortly.");
+    document.getElementById("leadForm").reset();
   } else {
-    alert("Something went wrong. Please try again.");
+    const errorText = await response.text();
+    console.error("Supabase error:", errorText);
+    alert("Something went wrong. Check console.");
   }
 });
