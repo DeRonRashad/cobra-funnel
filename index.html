@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>COBRA Alternatives</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Just Lost Your Job?</h1>
-    <h2>See Cheaper Alternatives to COBRA in 60 Seconds</h2>
+<form id="leadForm">
+  <input id="full_name" type="text" placeholder="Full Name" required />
+  <input id="phone" type="tel" placeholder="Phone Number" required />
+  <input id="email" type="email" placeholder="Email" required />
 
-    <form id="leadForm">
-      <input id="full_name" type="text" placeholder="Full Name" required />
-      <input id="phone" type="tel" placeholder="Phone Number" required />
-      <input id="email" type="email" placeholder="Email" required />
+  <select id="coverage_type" required>
+    <option value="">Who needs coverage?</option>
+    <option value="individual">Just me</option>
+    <option value="family">Family</option>
+  </select>
 
-      <select id="coverage_type" required>
-        <option value="">Coverage Type</option>
-        <option value="Individual">Individual</option>
-        <option value="Family">Family</option>
-      </select>
+  <select id="urgency" required>
+    <option value="">How soon do you need coverage?</option>
+    <option value="immediately">Immediately</option>
+    <option value="1-2 weeks">1–2 weeks</option>
+    <option value="just exploring">Just exploring</option>
+  </select>
 
-      <button type="submit">Get My Options</button>
-    </form>
+  <select id="current_status" required>
+    <option value="">What best describes your situation?</option>
+    <option value="lost job">Recently lost job</option>
+    <option value="cobra too expensive">COBRA is too expensive</option>
+    <option value="shopping options">Shopping for better options</option>
+  </select>
 
-    <p class="note">No spam. Licensed agents will contact you.</p>
-    <p id="statusMessage" class="status"></p>
-  </div>
+  <select id="budget">
+    <option value="">Monthly budget (optional)</option>
+    <option value="under 200">Under $200</option>
+    <option value="200-500">$200–$500</option>
+    <option value="500+">$500+</option>
+  </select>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+  <button type="submit">Get My Options</button>
+</form>
